@@ -1,0 +1,5 @@
+Estos serian los módulos a trabajar, la repartición no fue en base a ningún tema en especial, por lo que si hay algún problema o duda, pueden cambiarlo poniéndonos de acuerdo entre nosotros mismos, incluyéndome obviamente.
+
+1. conexión con bandcamp encargándose de la función búsqueda de etiqueta en bandcamp y la clase etiqueta, tipo de etiqueta ( yesenia)
+2. realizar el panel administrativo de la búsqueda. Respuesta de la búsqueda bandcamp. Con un diseño que le enviare en un momento (Andrey)
+3. requerimientos, y respectivo tweet en cada una de las respuestas de búsqueda en twetter y claramente conexión con twetter. y publicación (Christopher)
