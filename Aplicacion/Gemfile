@@ -39,4 +39,4 @@ gem 'jquery-rails'
 
 gem 'rake'
 gem 'execjs'
-gem 'therubyracer'
+gem 'therubyracer', :platform => :ruby
