@@ -1,0 +1,137 @@
+<!-- Hola :) -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Andrey Bolanos - Tarea Programada #4 - BandCamp Extended API</title>
+  <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta name="keywords" content="bandcamp,tag,api" />
+  <meta name="description" content="API para obtener datos directamente del HTML de BandCamp" />
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" type="text/css" href="css/html.css" media="screen, projection, tv " />
+  <link rel="stylesheet" type="text/css" href="css/layout.css" media="screen, projection, tv" />
+  <link rel="stylesheet" type="text/css" href="css/print.css" media="print" />
+  <!-- Conditional comment to apply opacity fix for IE #content background.
+       Invalid CSS, but can be removed without harming design -->
+  <!--[if gt IE 5]>
+  <link rel="stylesheet" type="text/css" href="css/ie.css" media="screen, projection, tv " />
+  <![endif]-->
+</head>
+
+<body>
+<!-- #wrapper: centers the content and sets the width -->
+<div id="wrapper">
+  <!-- #content: applies the white, dropshadow background -->
+  <div id="content">
+    <!-- #header: holds site title and subtitle -->
+    <div id="header">
+      <img src="img/avatar.jpg" alt="AyL" />
+      <h1><span class="big darkBrown">B</span>and<span class="big darkBrown">C</span>amp Extended API</h1>
+      <h2><span class="highlight">Por: @AndreyBolanos</span></h2>
+    </div>
+    <div id="page">
+      <h1>BandCamp API Extendido: busqueda <strong>'Tags'</strong></h1>
+      <p>BandCamp ofrece un <a href="http://bandcamp.com/developer" target="_blank">API para desarrolladores</a> bastante completo, pero actualmente esta <u>deshabilitado</u> y no posee un m&oacute;dulo para b&uacute;squeda por <strong>tags</strong>. Por esta razon es que he desarrollado una <a href="http://es.wikipedia.org/wiki/Servicio_web" target="_blank">servicio web</a> que se alimenta del HTML de BandCamp y de esta forma se facilita el proceso de desarrollo.</p>
+      <code>http://bandcamp.com/developer</code>
+      <p><strong>Ejemplo BandCamp API:</strong><br /><a href="http://api.bandcamp.com/api/band/3/info?key=vatnajokull&band_id=203035041&debug" target="_blank">http://api.bandcamp.com/api/<strong>band</strong>/3/<strong>info</strong>?key=vatnajokull&<strong>band_id</strong>=203035041&debug</a></p>
+      <p>La utilizaci&oacute;n de este servicio es libre para los estudiantes del curso <em>"Lenguajes de Programaci&oacute;n"</em> del <strong>ITCR</strong>, de lo contrario por favor ponerse en <a href="mailto:contact@andreybolanos.com">contacto</a>.</p>
+      <h1>¿Qué es un JSON?</h1>
+      <p>La mayor&iacute;a de los API's devuelven repuestas en formato XML o JSON. El API de BandCamp devuelve respuestas en formato JSON y por el momento este servicio solo soporta respuestas en formato JSON tambi&eacute;n.</p>
+      <code>{
+  "band_id": 203035041,
+  "track_id": 2323108455
+}</code>
+      <p>Para m&aacute;s informaci&oacute;n de este formato, consultar la p&aacute;gina de Wikipedia <a href="http://es.wikipedia.org/wiki/JSON" target="_blank">JSON</a> o la fuente oficial del formato <a href="http://www.json.org/" target="_blank">JSON.org</a>.</p>
+      <h1>¿Como usarlo?</h1>
+      <p>Siguiendo la misma estructura del BandCamp API, la consulta b&aacute;sica:</p>
+      <code>http://api.andreybolanos.com/bandcamp/?m=<strong>tag</strong>&f=<strong>search</strong>&name=<strong>{TAG}</strong></code>
+      <p>Debe remplazarse <span class="highlight"><strong>{TAG}</strong></span> por el tag buscado (pa&iacute;ses, generos, artistas, etc.)</p>
+      <h1>Parametros</h1>
+      <h2>Configuraciones del API</h2>
+      <table>
+        <caption>
+          Cada parametro se agrega como &<strong>{PARAMETRO}</strong>=<strong>{VALOR}</strong>
+        </caption>
+        <thead>
+          <tr>
+            <th class="width30">Parametro</th>
+            <th>Descripci&oacute;n</th>
+            <th class="width10 aCenter">Valores</th>
+            <th class="width10 aCenter">Req</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>m</td>
+            <td class="smallLetter">Nombre del modulo<br /><span class="highlight">** en desarrollo</span></td>
+            <td class="alignRight">m = tag</td>
+            <td class="alignRight">SI</td>
+          </tr>
+           <tr>
+            <td>f</td>
+            <td class="smallLetter">Nombre de la funcion<br /><span class="highlight">** en desarrollo</span></td>
+            <td class="alignRight">f = search</td>
+            <td class="alignRight">SI</td>
+          </tr>
+        </tbody>
+      </table>
+      <h2>Configuraciones del modulo TAG :: funcion SEARCH</h2>
+      <code>http://api.andreybolanos.com/bandcamp/?m=tag&f=search<strong>[parametros..]</strong></code>
+      <p><span class="highlight">Los siguientes parametros afectan el rendimiento de la consulta!</span></p>
+      <table>
+        <caption>
+          Cada parametro se agrega como &<strong>{PARAMETRO}</strong>=<strong>{VALOR}</strong>
+        </caption>
+        <thead>
+          <tr>
+            <th class="width30">Parametro</th>
+            <th>Descripci&oacute;n</th>
+            <th class="width10 aCenter">Valores</th>
+            <th class="width10 aCenter">Req</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="dark">
+            <td>name</td>
+            <td class="smallLetter">Nombre del tag</td>
+            <td class="smallLetter alignRight">string</td>
+            <td class="smallLetter alignRight">SI</td>
+          </tr>
+          <tr>
+            <td>incAlbumData</td>
+            <td class="smallLetter">Incluye los datos del album en<br /><span class="highlight">results &gt; data &gt; album_data</span><br />Default: 0 (false)</td>
+            <td class="smallLetter alignRight">0 (false) | 1 (true)</td>
+            <td class="smallLetter alignRight">Opcional</td>
+          </tr>
+          <tr>
+            <td>incBandData</td>
+            <td class="smallLetter">Incluye los datos de la banda en<br /><span class="highlight">results &gt; data &gt; band_data</span><br />Default: 0 (false)</td>
+            <td class="smallLetter alignRight">0 (false) | 1 (true)</td>
+            <td class="smallLetter alignRight">Opcional</td>
+          </tr>
+          <tr>
+            <td>incTrackData</td>
+            <td class="smallLetter">Incluye los datos de la cancion en<br /><span class="highlight">results &gt; data &gt; track_data</span><br />Default: 0 (false)</td>
+            <td class="smallLetter alignRight">0 (false) | 1 (true)</td>
+            <td class="smallLetter alignRight">Opcional</td>
+          </tr>
+          <tr>
+            <td>limit</td>
+            <td class="smallLetter">Limita la cantidad de resultados<br />Default: 10</td>
+            <td class="smallLetter alignRight">int</td>
+            <td class="smallLetter alignRight">Opcional</td>
+          </tr>
+        </tbody>
+      </table>
+      <h1>Ruby</h1>
+      <p>La pregunta clave: <strong>¿C&oacute;mo usarlo con Ruby?</strong></p>
+      <ul>
+      	<li><a href="http://flori.github.com/json/" target="_blank">JSON implementation for Ruby</a><li>
+        <li><a href="http://developer.yahoo.com/ruby/ruby-json.html" target="_blank">Parse JSON using Ruby</a></li>
+      </ul>
+      <p class="footer">Copyright&copy; 2012 AndreyBolanos.com</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>
