@@ -1,0 +1,64 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+ul#results {
+   background:#FFF;
+   color:#000;
+   height:450px;
+   overflow:auto;
+   border-radius:2px;
+}
+
+ul#results li {
+  width:100%;
+  height:100px;
+  float:left;
+  clear:both;
+  border-bottom:1px solid #DDD;
+  overflow:hidden;
+}
+
+ul#results li.last {
+  border-bottom:none;
+}
+
+ul#results li#no_results {
+  height:20px;
+  padding:210px 0;
+  border-bottom:none;
+}
+
+ul#results li#no_results p {
+  text-align:center;
+  font-size:1.6em;
+  font-style:italic;
+  color:#CCC;
+}
+
+ul#results li .result_image,
+ul#results li .result_info,
+ul#results li .result_action {
+  height:80px;
+  padding:10px;
+  float:left;
+}
+
+ul#results li .result_image {
+}
+
+ul#results li .result_info {
+}
+
+ul#results li .result_info h3 {
+  font-size:1.6em;
+  padding-bottom:10px;
+}
+
+ul#results li .result_info p.url {
+  padding-top:6px;
+}
+
+ul#results li .result_action {
+  float:right;
+}

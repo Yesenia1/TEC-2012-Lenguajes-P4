@@ -1,0 +1,2 @@
+SetEnv RAILS_ENV development
+SetEnv GEM_PATH /home/tp4len/gems/

@@ -1,0 +1,165 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:.8em;
+}
+
+a {
+	color:#036;
+	text-decoration: none;
+}
+
+a:hover {
+	color:#069;
+}
+
+ul, form {
+	width:100%;
+	float:left;
+	clear:both;
+}
+
+ul {
+	list-style:none;
+}
+
+.button {
+  text-align: center;
+  text-transform:uppercase;
+  width:100px;
+  padding:10px 5px;
+  margin:10px 0;
+  float: left;
+}
+
+.blue_button {
+  background:#99C;
+  border:1px solid #66C;
+}
+
+.blue_button:hover {
+  background:#AAC;
+  border:1px solid #33C;
+}
+
+.yellow_button {
+	background: #FF0;
+	border:none;
+	color:#000;
+}
+
+.yellow_button:hover {
+	background: #EE0;
+}
+
+.orange_button {
+	background: url(/images/button-orange-back.gif) repeat-x top left #E40;
+	border-top-left-radius:5px;
+	border-bottom-left-radius:5px;
+	font-weight:bold;
+}
+
+#wrapper {
+	width:600px;
+	margin:0 auto;
+	margin-top:40px;
+}
+
+#wrap-center {
+	background:url(/images/background-repeater.gif) repeat-x top left #6db6e5;
+	border-radius:3px;
+	color:#FFF;
+	width:100%;
+	float:left;
+	clear:both;
+}
+
+#header, #search, #content, #footer {
+	padding:3%;
+	width:94%;
+	float:left;
+	clear:both;
+}
+
+#search {
+	padding-top: 0;
+	padding-bottom:2%;
+}
+
+#search div {
+	float: left;
+	height:16px;
+	overflow:hidden;
+	width: 20%;
+	margin-right: 1px;
+}
+
+#search input#search_query {
+	float: left;
+	width:61%;
+	height: 36px;
+	padding: 0 2%;
+	text-transform:uppercase;
+	font-style:italic;
+	color:#666;
+	margin: 10px 0;
+	border: none;
+	border-top-right-radius:5px;
+	border-bottom-right-radius:5px;
+}
+
+#search input#search_sbt {
+	background: url(/images/search-btn-sprite.png) no-repeat left -36px #FF0;
+	text-indent:-999px;
+	float:right;
+	width:56px;
+	height:36px;
+	overflow:none;
+}
+
+#search input#search_sbt:hover {
+	background-position: left top;
+}
+
+#content {
+	padding-top: 0;
+	padding-bottom: 0; 	
+}
+
+#content #listResults_sbt {
+	float:right;
+}
+
+#footer {
+	color:#000;
+	padding-top:1.5%;
+	padding-bottom:1.5%;
+	font-size:.8em;
+}
+
+#footer .copyright {
+	float:left;
+}
+
+#footer .powered {
+	float:right;
+	font-style:italic;
+}
