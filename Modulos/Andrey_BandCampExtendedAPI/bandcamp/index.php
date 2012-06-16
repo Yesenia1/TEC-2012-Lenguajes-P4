@@ -72,13 +72,13 @@
 										$link["href"] = $refElement->getAttribute("href");
 										if(strpos($link["href"],"/album/") !== FALSE){
 											$link["type"] = "album";
-											$link["album_title"] = $refElement->getAttribute("title");
-											$link["album_image"] = $refElement->getElementsByTagName("img")->item(0)->getAttribute("src");
+											$link["title"] = $refElement->getAttribute("title");
+											$link["image"] = $refElement->getElementsByTagName("img")->item(0)->getAttribute("src");
 										}
 										if(strpos($link["href"],"/track/") !== FALSE){
 											$link["type"] = "track";
-											$link["album_title"] = $refElement->getAttribute("title");
-											$link["album_image"] = $refElement->getElementsByTagName("img")->item(0)->getAttribute("src");
+											$link["title"] = $refElement->getAttribute("title");
+											$link["image"] = $refElement->getElementsByTagName("img")->item(0)->getAttribute("src");
 										}
 										$otherData = $refElement->getElementsByTagName("div");
 										for($j = 0; $j < $otherData->length; $j++){
@@ -146,6 +146,11 @@
 
 	header('Cache-Control: no-cache, must-revalidate');
 	header('Content-type: application/json; charset=utf-8');
-	echo json_encode($response);
+	
+	if(isset($_GET['callback']) && !empty($_GET['callback'])){
+		echo $_GET['callback'] . "(" . json_encode($response) . ");";
+	}else{
+		echo json_encode($response);
+	}
 
 ?>

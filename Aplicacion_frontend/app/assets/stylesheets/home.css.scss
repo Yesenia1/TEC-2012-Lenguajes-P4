@@ -5,9 +5,17 @@
 ul#results {
    background:#FFF;
    color:#000;
-   height:450px;
+   height:500px;
    overflow:auto;
    border-radius:2px;
+}
+
+ul#results.loading {
+  background:url(/images/ajax-loader.gif) no-repeat center center #FFF;
+}
+
+ul#results.loading li {
+  display:none !important;
 }
 
 ul#results li {
@@ -19,13 +27,21 @@ ul#results li {
   overflow:hidden;
 }
 
+ul#results li.item_album {
+  background:url(/images/album-icon-2.png) no-repeat 460px 50px transparent; 
+}
+
+ul#results li.item_track {
+  background:url(/images/track-icon-2.png) no-repeat 462px 40px transparent; 
+}
+
 ul#results li.last {
   border-bottom:none;
 }
 
 ul#results li#no_results {
   height:20px;
-  padding:210px 0;
+  padding:235px 0;
   border-bottom:none;
 }
 
@@ -33,7 +49,7 @@ ul#results li#no_results p {
   text-align:center;
   font-size:1.6em;
   font-style:italic;
-  color:#CCC;
+  color:#999;
 }
 
 ul#results li .result_image,
@@ -52,13 +68,28 @@ ul#results li .result_info {
 
 ul#results li .result_info h3 {
   font-size:1.6em;
-  padding-bottom:10px;
+}
+
+ul#results li .result_info p.itemSubText {
+  font-weight:bold;
 }
 
 ul#results li .result_info p.url {
-  padding-top:6px;
+  font-size:.9em;
+  padding-top:3px;
+  padding-bottom:3px;
 }
 
 ul#results li .result_action {
+  padding-left:0;
   float:right;
+}
+
+ul#results li .result_action p.value {
+  padding-top: 4px;
+  text-transform: uppercase;
+  font-size: .75em;
+  overflow: hidden;
+  width: 80px;
+  text-align: right;
 }

@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Twit My Band - Tarea Programada No4 - Ruby</title>
+  <title>Tweet My #Band - Tarea Programada No4 - Ruby</title>
   <!-- Stylesheets layout -->
+  <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <!-- javascript layout -->
   <%= javascript_include_tag "application" %>
@@ -13,25 +14,29 @@
 
 <div id="wrapper">
 	<div id="wrap-center">
-		<div id="header">
-			<h1>Twit My Band</h1>
-		</div>
-		<div id="search">
-			<form id="searchForm" name="searchForm" method="post" action="">
-				<div class="button orange_button">Buscar</div>
-				<input type="text" id="search_query" name="search_query" value="ej: costa rica" />
-				<input type="submit" id="search_sbt" class="button yellow_button" name="search_sbt" value="go" />
-			</form>
-		</div>
-		<div id="content">
-			<%= yield %>
-		</div>
-		<div id="footer">
-			<p class="copyright">ITCR - Lenguajes de Programaci&oacute;n - Tarea Programada #4</p>
-			<p class="powered">Powered by <a href="http://www.bandcamp.com/" title="Fuente de datos musicales" target="_blank">BandCamp</a> &amp; <a href="" title="Red social de twits" target="_blank">Twitter</a></p>
+		<div id="wrap-design">
+			<div id="header">
+				<h1>Tweet My #Band</h1>
+			</div>
+			<div id="search">
+				<form id="searchForm" name="searchForm" method="post" action="">
+					<div class="button orange_button">Buscar</div>
+					<input type="text" id="search_query" name="search_query" value="ej: costa rica" />
+					<input type="submit" id="search_sbt" class="button yellow_button" name="search_sbt" value="go" />
+				</form>
+			</div>
+			<div id="content">
+				<%= yield %>
+			</div>
+			<div id="footer">
+				<p class="copyright">ITCR - Lenguajes de Programaci&oacute;n - Tarea Programada #4</p>
+				<p class="powered">Powered by <a href="http://www.bandcamp.com/" title="Fuente de datos musicales" target="_blank">BandCamp</a> &amp; <a href="" title="Red social de twits" target="_blank">Twitter</a></p>
+			</div>
 		</div>
 	</div>
 </div>
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
 </body>
 </html>

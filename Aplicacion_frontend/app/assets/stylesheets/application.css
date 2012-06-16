@@ -18,7 +18,7 @@
 }
 
 body {
-	font-family:Arial, Helvetica, sans-serif;
+	font-family: 'Droid Sans', Helvetica, 'Arial';
 	font-size:.8em;
 }
 
@@ -80,7 +80,6 @@ ul {
 #wrapper {
 	width:600px;
 	margin:0 auto;
-	margin-top:40px;
 }
 
 #wrap-center {
@@ -92,11 +91,22 @@ ul {
 	clear:both;
 }
 
+#wrap-design {
+	background: url(/images/logo.png) no-repeat 312px 20px transparent;
+	width: 100%;
+	float: left;
+	clear: both;
+}
+
 #header, #search, #content, #footer {
 	padding:3%;
 	width:94%;
 	float:left;
 	clear:both;
+}
+
+#header {
+	padding-top:4%;
 }
 
 #search {
@@ -124,6 +134,7 @@ ul {
 	border: none;
 	border-top-right-radius:5px;
 	border-bottom-right-radius:5px;
+	outline: none;
 }
 
 #search input#search_sbt {
@@ -152,7 +163,7 @@ ul {
 	color:#000;
 	padding-top:1.5%;
 	padding-bottom:1.5%;
-	font-size:.8em;
+	font-size:.85em;
 }
 
 #footer .copyright {
