@@ -36,19 +36,26 @@ function createSearchItemResult(counter,obj){
 		}
 	}
 	var itemUrl = $("<p />").addClass("url").html('<a href="' + obj.href + '" title="Ver ' + obj.item_text + ' en BandCamp" target="_blank">+ informaci&oacuten del <strong>' + obj.type + '</strong></a>');
-	var itemTweet = $("<p />").addClass("tweetBtn").html('<a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-url="' + obj.href + '" data-via="TweetMyBand" data-text="Musica de la buena :)">Tweet</a>');
-	infoContainer.append(itemText).append(itemSubText).append(itemUrl).append(itemTweet);
 	
-	var actionContainer = $("<div />").addClass("result_action");
-	var itemMoney = $("<p />").addClass("value").text("");
+	var valueType = "FREE";
 	if(typeof(obj.data) != "undefined" && typeof(obj.data.error) == "undefined" && 
 	  (typeof(obj.data.album_data) != "undefined" || typeof(obj.data.track_data) != "undefined")){
 	  	var downloadable = (typeof(obj.data.album_data) == "undefined") ? obj.data.track_data.downloadable :  obj.data.album_data.downloadable;
 	  	if(downloadable >= 2){
-	  		itemMoney.html('<a href="' + obj.href + '?action=buy" title="Comprar ' + obj.title + '" target="_blank">Comprar</a>');
-	  	}else{
-	  		itemMoney.html('<a href="' + obj.href + '" title="Bajar ' + obj.title + '" target="_blank">Bajar GRATIS</a>');
-	  	}
+			valueType = "PAID";
+		}
+	}
+	
+	var itemTweet = $("<p />").addClass("tweetBtn").html('<a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-url="' + obj.href + '" data-via="TweetMyBand" data-text="Yo elegi ' + obj.item_text + ' de ' + obj.item_subtext + ' que es ' + valueType + '">Tweet</a>');
+	infoContainer.append(itemText).append(itemSubText).append(itemUrl).append(itemTweet);
+	
+	var actionContainer = $("<div />").addClass("result_action");
+	var itemMoney = $("<p />").addClass("value").text("");
+	
+	if(valueType == "PAID"){
+		itemMoney.html('<a href="' + obj.href + '?action=buy" title="Comprar ' + obj.title + '" target="_blank">Comprar</a>');
+	}else{
+		itemMoney.html('<a href="' + obj.href + '" title="Bajar ' + obj.title + '" target="_blank">Bajar GRATIS</a>');
 	}
 	
 	actionContainer.append(itemMoney);
